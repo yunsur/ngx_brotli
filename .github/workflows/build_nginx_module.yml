@@ -45,9 +45,9 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: "v${{ inputs.module_version }}"
-          name: "Release v${{ inputs.module_version }}"
-          body: "Release v${{ inputs.module_version }}"
+          tag_name: "v${{ inputs.module_version }}-nginx-${{ inputs.nginx_version }}"
+          name: "Release v${{ inputs.module_version }} (nginx-${{ inputs.nginx_version }})"
+          body: "Release v${{ inputs.module_version }} for nginx-${{ inputs.nginx_version }}"
           files: ./debs/*.deb
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
